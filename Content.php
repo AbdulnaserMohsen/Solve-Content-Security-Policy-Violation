@@ -28,7 +28,8 @@ class Content
             {
                 $styleValue = $element->getAttribute('style');
 
-                $className = 'style-class-' . count($styles);
+                $uniqeName = self::generateRandomString(5);
+                $className = "style-class-{$uniqeName}-" . count($styles);
 
                 $styles[$className] = $styleValue;
 
@@ -60,5 +61,19 @@ class Content
 
 
     }
+
+
+    private static function generateRandomString($length = 10) 
+    {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+        return $randomString;
+    }
+
+
     
 }
