@@ -34,6 +34,8 @@ class Content
 
                 $element->setAttribute('class', $className);
 
+                $element->removeAttribute("style");
+
             }
         }
 
