@@ -14,7 +14,7 @@ class Content
         {
             return;
         }
-        $dom->loadHTML($value);
+        $dom->loadHTML('<?xml encoding="utf-8"?>' . $value);
 
 
 
